@@ -1,0 +1,17 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<ul>
+    @foreach (var band in ViewBag.Bands)
+    {
+        @foreach (var bandlid in band.Bandleden)
+        {
+            <li>
+                [@band.Naam] @bandlid.Naam - @bandlid.Leeftijd @(!bandlid.Levend ? "(+)" : "" ) - @bandlid.Geslacht
+            </li>
+        }
+    }
+</ul>
